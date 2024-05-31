@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "debo",
+  "risk": "2",
+  "title": "Missing access controls in the governance VoteWeighting contract",
+  "issueId": 13,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/13"
+}
