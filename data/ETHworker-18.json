@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "ETHworker",
+  "risk": "3",
+  "title": "Missing Validation for `uniswapPool` in `registerPair` Function",
+  "issueId": 18,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/18"
+}
