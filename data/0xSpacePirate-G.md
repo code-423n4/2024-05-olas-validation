@@ -1,4 +1,4 @@
-### [GAS-0]
+### Receive function can be optimized
 
 **Description:** 
 
@@ -51,4 +51,6 @@ Can be improved via assembly in the following way:
     }
 ```
 
-Please note that apart from the assembly for the event, the newBalance and newAvailableRewards variables were redundant as well.
+Please note that apart from the assembly for the event, the newBalance and newAvailableRewards variables were redundant as well. 
+
+In addition, the same approach with assembly can be repeated through the project for when it comes to emitting events which will save up even more gas overall.
