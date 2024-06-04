@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Unprotected State Modifications in `accountOwnerIncentives` where the state is modified (rewards and top-ups cleared) for valid `unitIds` before the function reverts due to an invalid `unitId` in the input array",
+  "issueId": 27,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/27"
+}
