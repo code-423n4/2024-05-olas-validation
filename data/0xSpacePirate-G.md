@@ -7,6 +7,11 @@ The `Receive` function in `StakingNativeToken::receive` uses too much gas and ca
 **Impact:**
 No impact, gas optimization
 
+## Tools Used
+Solidity
+
+
+
 **Recommended Mitigation:**
 
 The logic at the moment is the following:
@@ -65,6 +70,11 @@ Since the `data` variables is passed through an external function `GnosisTargetD
 **Impact:**
 No impact, gas optimization
 
+## Tools Used
+Solidity
+
+
+
 **Recommended Mitigation:**
 
 In `GnosisTargetDispenserL2::receiveMessage` on line 87 of `GnosisTargetDispenserL2` would be better in the following way:
@@ -115,6 +125,11 @@ Since the `_stakingParams` variables are passed through an external function `St
 
 **Impact:**
 No impact, gas optimization
+
+## Tools Used
+Solidity
+
+
 
 **Recommended Mitigation:**
 
