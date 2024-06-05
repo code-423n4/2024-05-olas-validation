@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "BiasedMerc",
+  "risk": "2",
+  "title": "DefaultTargetDispenserL2::_processData does check if dispender is paused",
+  "issueId": 40,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/40"
+}
