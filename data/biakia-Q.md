@@ -2,7 +2,7 @@
 Cross-bridge leftovers and incorrectly sent funds will not be migrated
 
 # Vulnerability details
-The function `migrate` in contract `DefaultTargetDispenserL2` is used to migratesfunds to a new specified L2 target dispenser contract address. It will transfer all olas tokens to the new contract:
+The function `migrate` in contract `DefaultTargetDispenserL2` is used to migrates funds to a new specified L2 target dispenser contract address. It will transfer all olas tokens to the new contract:
 ```solidity
 // Get OLAS token amount
         uint256 amount = IToken(olas).balanceOf(address(this));
