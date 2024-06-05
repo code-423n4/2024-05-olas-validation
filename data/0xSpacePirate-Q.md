@@ -1,5 +1,5 @@
 
-### [LOW-0] [DoS] Too many agentIds would cause the initialize function to be too expensive and potentially unusable
+### [LOW-0] [DoS] Too many agentIds would cause the initialize function to be too expensive
 
 **Description:** 
 Member variables are stored in storage and when we have an array its length is stored in storage as well. Hence, when we have an array.length we will read from storage to find out what that length is, which inside a for loop uses too much gas. Having too many agentIds would mean that we will call way too many times the .length of the array from storage which would become extremely expensive and unusable.
