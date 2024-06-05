@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "marchev",
+  "risk": "2",
+  "title": "Any NFTs sent to `StakingToken` and `StakingNativeToken` are irrecoverably lost",
+  "issueId": 45,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/45"
+}
