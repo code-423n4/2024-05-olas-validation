@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "peanuts",
+  "risk": "3",
+  "title": "There is no `onlyWormholeRelayer` modifier when receiving messages on L1 and L2 through Wormhole",
+  "issueId": 68,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/68"
+}
