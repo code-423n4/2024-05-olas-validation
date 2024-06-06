@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "LinKenji",
+  "risk": "2",
+  "title": "VoteWeighting.sol - Nominee Struct Leads to Data Loss and Misinterpretation.",
+  "issueId": 51,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/51"
+}
