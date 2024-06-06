@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "LinKenji",
+  "risk": "2",
+  "title": "VoteWeighting._nomineeRelativeWeight Can Revert Due to Division by Zero ",
+  "issueId": 53,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/53"
+}
