@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "BiasedMerc",
+  "risk": "2",
+  "title": "Tokenomics::changeIncentiveFractions() incorrectly checks sum of _rewardComponentFraction and _rewardAgentFraction",
+  "issueId": 81,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/81"
+}
