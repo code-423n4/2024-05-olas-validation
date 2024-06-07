@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "arabgodx",
+  "risk": "3",
+  "title": "Reentrancy and Withheld Amount Exploitation in `Dispenser.sol`",
+  "issueId": 80,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/80"
+}
