@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "peanuts",
+  "risk": "3",
+  "title": "StakingBase._evict does not work as intended, stakers will be erroneously evicted",
+  "issueId": 78,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/78"
+}
