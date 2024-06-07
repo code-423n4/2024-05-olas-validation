@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "peanuts",
+  "risk": "2",
+  "title": "Stakers who are evicted cannot stake again because their mapServiceInfo[serviceId] is not deleted",
+  "issueId": 79,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/79"
+}
