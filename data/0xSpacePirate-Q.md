@@ -1,5 +1,5 @@
 
-### [LOW-0] [DoS] Too many agentIds would cause the initialize function to be too expensive
+### [LOW-0] [DoS] Too many agentIds would cause the initialize function to crash due to MemoryLimitOOG and also gas consumption can be improved
 
 **Description:** 
 The variable `_stakingParams` is a variable stored in memory and an array's length is stored in memory as well. Hence, when we have an array.length we will read from memory to find out the length of the variable, which inside a for loop uses too much gas. Having too many agentIds would mean that we will call way too many times the .length of the array from memory which would become more expensive.
