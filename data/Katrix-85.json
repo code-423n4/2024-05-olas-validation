@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "Katrix",
+  "risk": "3",
+  "title": "Several interfaces used in contracts in scope have not been implemented anywhere, and essentially have empty functions that are being called in those contracts.",
+  "issueId": 85,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/85"
+}
