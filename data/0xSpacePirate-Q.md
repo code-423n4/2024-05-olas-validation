@@ -2,10 +2,10 @@
 ### [LOW-0] [DoS] Too many agentIds would cause the initialize function to be too expensive
 
 **Description:** 
-Member variables are stored in storage and when we have an array its length is stored in storage as well. Hence, when we have an array.length we will read from storage to find out what that length is, which inside a for loop uses too much gas. Having too many agentIds would mean that we will call way too many times the .length of the array from storage which would become extremely expensive.
+The variable `_stakingParams` is a variable stored in memory and an array's length is stored in memory as well. Hence, when we have an array.length we will read from memory to find out the length of the variable, which inside a for loop uses too much gas. Having too many agentIds would mean that we will call way too many times the .length of the array from memory which would become more expensive.
 
 **Impact:**
-Low, too many agentIds causing the function to be too expensive to use
+Low, too many agentIds causing the function to be more expensive expensive and also crash due to a MemoryLimitOOG if a larger number of agentIds is inputted. 
 
 ## Proof of Concept
 
@@ -64,6 +64,10 @@ import {StakingActivityChecker} from "../contracts/staking/StakingActivityChecke
         stakingToken.initialize(params, address(0x4321), address(0x9876)); 
         // Error MemoryLimitOOG
         // gas: >28717912277
+
+        // 100 agentIds = gas 2971559 (current)
+        // 100 agentIds = gas 2970364 (improved)
+        // percetange difference = %0.04
     }
 
     function agentIdsInitialization(uint256 length) public pure returns (uint256[] memory agentIds) {
