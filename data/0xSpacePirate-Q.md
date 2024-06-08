@@ -95,3 +95,105 @@ In `StakingBase::_initialize` line 332 add a variable in the following way:
 ```
 
 Additionally, consider changing the type of agentIds from uint256 to uint16 or uint32
+
+**--------------------------------**
+
+### [LOW-1] The function_addNominee has internal access and all the input validation is in the functions calling it
+
+**Description:** 
+
+In `governance/contracts/VoteWeighting.sol` we have an internal function `VoteWeighting::_addNominee` which is being called from two other functions `VoteWeighting::addNomineeEVM` and `VoteWeighting::addNomineeNonEVM` which are both external. In both of those external functions we have a input validation, for instance in `VoteWeighting::addNomineeEVM` the input validation is the following:
+
+```
+        if (account == address(0)) {
+            revert ZeroAddress();
+        }
+
+        // Check for zero chain Id
+        if (chainId == 0) {
+            revert ZeroValue();
+        }
+
+        // Check for the chain Id overflow
+        if (chainId > MAX_EVM_CHAIN_ID) {
+            revert Overflow(chainId, MAX_EVM_CHAIN_ID);
+        }
+```
+
+However, since the `VoteWeighting::_addNominee` is internal, it can be called from a contract which inherits from `VoteWeighting`, hence bypassing the input validation and the attacker can add nominees which chainId = 0, account address = 0, or a chainId > MAX_EVM_CHAIN_ID.
+
+**Impact:**
+LOW
+
+## Proof of Concept
+
+forge test --match-path test/VoteWeightingTest.t.sol
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.25;
+
+import {Test, console} from "forge-std/Test.sol";
+import {StdCheats} from "forge-std/StdCheats.sol";
+import {VoteWeighting, Nominee} from "../contracts/VoteWeighting.sol";
+
+contract VoteWeightingTest is StdCheats, Test {
+
+    address public DEPLOYER = makeAddr("deployer");
+
+    uint256 public constant INITIAL_DEPLOYER_BALANCE = 0.01 ether;
+
+    VoteWeighting public voteWeighting;
+
+
+    Attack public attack;
+
+    function setUp() public {
+
+        vm.deal(DEPLOYER, INITIAL_DEPLOYER_BALANCE);
+
+        voteWeighting = new VoteWeighting(address(0x1234));
+
+        attack = new Attack(address(voteWeighting));
+    }
+
+    function testAttack() public {
+
+        bytes32 newAccount = bytes32(uint256(uint160(address(0))));
+        uint256 chainId = 0x0;
+        uint256 nomineeId = 0x1;
+
+        vm.expectEmit(true, true, true, true);
+        emit VoteWeighting.AddNominee(newAccount, chainId, nomineeId);
+
+        attack.execute(newAccount, chainId);
+    }
+
+}
+
+contract Attack is VoteWeighting {
+
+    constructor(address _ve) VoteWeighting(_ve) {
+
+    }
+
+    function execute(bytes32 newAccount, uint256 newChainId) public {
+    
+        Nominee memory newNominee = Nominee({
+            account: newAccount,
+            chainId: newChainId
+        });
+
+        _addNominee(newNominee);
+    }
+
+}
+
+```
+
+## Tools Used
+Solidity, Foundry
+
+**Recommended Mitigation:**
+
+Make `VoteWeighting::_addNominee` private or add the same input validation in `VoteWeighting::_addNominee` as there is in both `VoteWeighting::addNomineeNonEVM` & `VoteWeighting::addNomineeEVM`
