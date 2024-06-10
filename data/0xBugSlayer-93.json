@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "0xBugSlayer",
+  "risk": "2",
+  "title": "Some of the L2s the protocol is deployed to, doesn't support PUSH0 opcode",
+  "issueId": 93,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/93"
+}
