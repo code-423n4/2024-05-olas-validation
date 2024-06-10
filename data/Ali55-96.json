@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "Ali55",
+  "risk": "3",
+  "title": "Reentrancy vulnerabilities can lead to attackers manipulating the contract state",
+  "issueId": 96,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/96"
+}
