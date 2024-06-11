@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "Incorrect Handling of Zero Values in _sendMessage Function Leads to Unintended Reverts in ArbitrumDepositProcessorL1.sol",
+  "issueId": 110,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/110"
+}
