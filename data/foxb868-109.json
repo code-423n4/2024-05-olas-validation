@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "Permanent Disabling of redeem Function Due to Improper Reentrancy Guard Handling in DefaultTargetDispenserL2.sol",
+  "issueId": 109,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/109"
+}
