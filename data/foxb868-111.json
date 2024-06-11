@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "Uninitialized Cost Calculation in _sendMessage Function Allows Insufficient Payment When transferAmount is Zero",
+  "issueId": 111,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/111"
+}
