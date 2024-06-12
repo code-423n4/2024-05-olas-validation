@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "mitigate the security risks in the StakingProxy contract associated with the use of delegatecall in the fallback function",
+  "issueId": 130,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/130"
+}
