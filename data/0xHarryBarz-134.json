@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "0xHarryBarz",
+  "risk": "2",
+  "title": "staking batch nonce is not updated in the ArbitrumTargetDispenserL2.receive function according to the docs",
+  "issueId": 134,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/134"
+}
