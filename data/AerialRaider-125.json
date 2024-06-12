@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Applying the Checks-Effects-Interactions pattern to the functions unstake and _claim functions",
+  "issueId": 125,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/125"
+}
