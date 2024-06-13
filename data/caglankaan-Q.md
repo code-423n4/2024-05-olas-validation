@@ -14161,3 +14161,1270 @@ Path: ./governance/contracts/VoteWeighting.sol
 #### Recommendation
 
 Follow the official [Solidity guidelines](https://docs.soliditylang.org/en/v0.8.17/style-guide.html).
+
+### NatSpec: Contract declarations should have `@notice` tag
+The `@notice` is used to explain to users what the contract does. The compiler interprets `///` or `/**` comments [as this tag](https://docs.soliditylang.org/en/latest/natspec-format.html#tags) if one wasn't explicitly provided.
+
+```solidity
+Path: ./tokenomics/contracts/Tokenomics.sol
+
+10:interface IOLAS {	// @audit-issue missing `@notice` tag
+
+17:interface IToken {	// @audit-issue missing `@notice` tag
+
+29:interface ITreasury {	// @audit-issue missing `@notice` tag
+
+37:interface IServiceRegistry {	// @audit-issue missing `@notice` tag
+
+58:interface IVotingEscrow {	// @audit-issue missing `@notice` tag
+
+254:contract Tokenomics is TokenomicsConstants {	// @audit-issue missing `@notice` tag
+```
+[10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L10-L10), [17](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L17-L17), [29](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L29-L29), [37](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L37-L37), [58](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L58-L58), [254](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L254-L254), 
+
+
+```solidity
+Path: ./tokenomics/contracts/TokenomicsConstants.sol
+
+8:abstract contract TokenomicsConstants {	// @audit-issue missing `@notice` tag
+```
+[8](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/TokenomicsConstants.sol#L8-L8), 
+
+
+```solidity
+Path: ./tokenomics/contracts/Dispenser.sol
+
+5:interface IDepositProcessor {	// @audit-issue missing `@notice` tag
+
+44:interface IToken {	// @audit-issue missing `@notice` tag
+
+58:interface ITokenomics {	// @audit-issue missing `@notice` tag
+
+142:interface ITreasury {	// @audit-issue missing `@notice` tag
+
+160:interface IVoteWeighting {	// @audit-issue missing `@notice` tag
+
+253:contract Dispenser {	// @audit-issue missing `@notice` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L5-L5), [44](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L44-L44), [58](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L58-L58), [142](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L142-L142), [160](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L160-L160), [253](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L253-L253), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol
+
+6:interface IBridge {	// @audit-issue missing `@notice` tag
+
+70:contract ArbitrumDepositProcessorL1 is DefaultDepositProcessorL1 {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L6-L6), [70](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L70-L70), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol
+
+6:interface IBridge {	// @audit-issue missing `@notice` tag
+
+37:contract OptimismTargetDispenserL2 is DefaultTargetDispenserL2 {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol#L6-L6), [37](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol#L37-L37), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol
+
+6:interface IDispenser {	// @audit-issue missing `@notice` tag
+
+10:interface IToken {	// @audit-issue missing `@notice` tag
+
+22:abstract contract DefaultDepositProcessorL1 is IBridgeErrors {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L6-L6), [10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L10-L10), [22](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L22-L22), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol
+
+6:interface IBridge {	// @audit-issue missing `@notice` tag
+
+23:contract ArbitrumTargetDispenserL2 is DefaultTargetDispenserL2 {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol#L6-L6), [23](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol#L23-L23), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol
+
+6:interface IBridge {	// @audit-issue missing `@notice` tag
+
+59:contract OptimismDepositProcessorL1 is DefaultDepositProcessorL1 {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L6-L6), [59](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L59-L59), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/EthereumDepositProcessor.sol
+
+4:interface IToken {	// @audit-issue missing `@notice` tag
+
+18:interface IStaking {	// @audit-issue missing `@notice` tag
+
+24:interface IStakingFactory {	// @audit-issue missing `@notice` tag
+
+50:contract EthereumDepositProcessor {	// @audit-issue missing `@notice` tag
+```
+[4](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L4-L4), [18](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L18-L18), [24](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L24-L24), [50](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L50-L50), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol
+
+7:interface IBridge {	// @audit-issue missing `@notice` tag
+
+50:contract WormholeTargetDispenserL2 is DefaultTargetDispenserL2, TokenReceiver {	// @audit-issue missing `@notice` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L7-L7), [50](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L50-L50), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol
+
+6:interface IBridge {	// @audit-issue missing `@notice` tag
+
+32:contract GnosisDepositProcessorL1 is DefaultDepositProcessorL1 {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L6-L6), [32](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L32-L32), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol
+
+11:contract PolygonTargetDispenserL2 is DefaultTargetDispenserL2, FxBaseChildTunnel {	// @audit-issue missing `@notice` tag
+```
+[11](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol#L11-L11), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol
+
+11:contract WormholeDepositProcessorL1 is DefaultDepositProcessorL1, TokenSender {	// @audit-issue missing `@notice` tag
+```
+[11](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L11-L11), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol
+
+6:interface IBridge {	// @audit-issue missing `@notice` tag
+
+26:contract GnosisTargetDispenserL2 is DefaultTargetDispenserL2 {	// @audit-issue missing `@notice` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L6-L6), [26](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L26-L26), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol
+
+7:interface IStaking {	// @audit-issue missing `@notice` tag
+
+14:interface IStakingFactory {	// @audit-issue missing `@notice` tag
+
+22:interface IToken {	// @audit-issue missing `@notice` tag
+
+45:abstract contract DefaultTargetDispenserL2 is IBridgeErrors {	// @audit-issue missing `@notice` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L7-L7), [14](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L14-L14), [22](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L22-L22), [45](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L45-L45), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol
+
+7:interface IBridge {	// @audit-issue missing `@notice` tag
+
+22:contract PolygonDepositProcessorL1 is DefaultDepositProcessorL1, FxBaseRootTunnel {	// @audit-issue missing `@notice` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L7-L7), [22](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L22-L22), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IDonatorBlacklist.sol
+
+5:interface IDonatorBlacklist {	// @audit-issue missing `@notice` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IDonatorBlacklist.sol#L5-L5), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IBridgeErrors.sol
+
+4:interface IBridgeErrors {	// @audit-issue missing `@notice` tag
+```
+[4](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IBridgeErrors.sol#L4-L4), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IErrorsTokenomics.sol
+
+5:interface IErrorsTokenomics {	// @audit-issue missing `@notice` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IErrorsTokenomics.sol#L5-L5), 
+
+
+```solidity
+Path: ./registries/contracts/utils/SafeTransferLib.sol
+
+16:library SafeTransferLib {	// @audit-issue missing `@notice` tag
+```
+[16](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/utils/SafeTransferLib.sol#L16-L16), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingVerifier.sol
+
+5:interface IStaking {	// @audit-issue missing `@notice` tag
+
+43:contract StakingVerifier {	// @audit-issue missing `@notice` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L5-L5), [43](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L43-L43), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingNativeToken.sol
+
+17:contract StakingNativeToken is StakingBase {	// @audit-issue missing `@notice` tag
+```
+[17](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingNativeToken.sol#L17-L17), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingActivityChecker.sol
+
+5:interface IMultisig {	// @audit-issue missing `@notice` tag
+
+18:contract StakingActivityChecker {	// @audit-issue missing `@notice` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingActivityChecker.sol#L5-L5), [18](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingActivityChecker.sol#L18-L18), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingBase.sol
+
+7:interface IActivityChecker {	// @audit-issue missing `@notice` tag
+
+30:interface IService {	// @audit-issue missing `@notice` tag
+
+168:abstract contract StakingBase is ERC721TokenReceiver {	// @audit-issue missing `@notice` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L7-L7), [30](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L30-L30), [168](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L168-L168), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingToken.sol
+
+11:interface IServiceTokenUtility {	// @audit-issue missing `@notice` tag
+
+44:contract StakingToken is StakingBase {	// @audit-issue missing `@notice` tag
+```
+[11](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L11-L11), [44](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L44-L44), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingProxy.sol
+
+21:contract StakingProxy {	// @audit-issue missing `@notice` tag
+```
+[21](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingProxy.sol#L21-L21), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingFactory.sol
+
+7:interface IStaking {	// @audit-issue missing `@notice` tag
+
+14:interface IStakingVerifier {	// @audit-issue missing `@notice` tag
+
+81:contract StakingFactory {	// @audit-issue missing `@notice` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L7-L7), [14](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L14-L14), [81](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L81-L81), 
+
+
+```solidity
+Path: ./governance/contracts/VoteWeighting.sol
+
+5:interface IDispenser {	// @audit-issue missing `@notice` tag
+
+16:interface IVEOLAS {	// @audit-issue missing `@notice` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L5-L5), [16](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L16-L16), 
+
+
+#### Recommendation
+
+Follow the official [Solidity guidelines](https://docs.soliditylang.org/en/v0.8.17/style-guide.html).
+
+### NatSpec: Contract declarations should have `@title` tag
+The `@title` is used to explain to users what the contract does. The compiler interprets `///` or `/**` comments [as this tag](https://docs.soliditylang.org/en/latest/natspec-format.html#tags) if one wasn't explicitly provided.
+
+```solidity
+Path: ./tokenomics/contracts/Tokenomics.sol
+
+10:interface IOLAS {	// @audit-issue missing `@title` tag
+
+17:interface IToken {	// @audit-issue missing `@title` tag
+
+29:interface ITreasury {	// @audit-issue missing `@title` tag
+
+37:interface IServiceRegistry {	// @audit-issue missing `@title` tag
+
+58:interface IVotingEscrow {	// @audit-issue missing `@title` tag
+```
+[10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L10-L10), [17](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L17-L17), [29](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L29-L29), [37](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L37-L37), [58](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L58-L58), 
+
+
+```solidity
+Path: ./tokenomics/contracts/Dispenser.sol
+
+5:interface IDepositProcessor {	// @audit-issue missing `@title` tag
+
+44:interface IToken {	// @audit-issue missing `@title` tag
+
+58:interface ITokenomics {	// @audit-issue missing `@title` tag
+
+142:interface ITreasury {	// @audit-issue missing `@title` tag
+
+160:interface IVoteWeighting {	// @audit-issue missing `@title` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L5-L5), [44](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L44-L44), [58](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L58-L58), [142](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L142-L142), [160](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L160-L160), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol
+
+6:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L6-L6), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol
+
+6:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol#L6-L6), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol
+
+6:interface IDispenser {	// @audit-issue missing `@title` tag
+
+10:interface IToken {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L6-L6), [10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L10-L10), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol
+
+6:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol#L6-L6), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol
+
+6:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L6-L6), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/EthereumDepositProcessor.sol
+
+4:interface IToken {	// @audit-issue missing `@title` tag
+
+18:interface IStaking {	// @audit-issue missing `@title` tag
+
+24:interface IStakingFactory {	// @audit-issue missing `@title` tag
+```
+[4](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L4-L4), [18](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L18-L18), [24](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L24-L24), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol
+
+7:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L7-L7), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol
+
+6:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L6-L6), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol
+
+6:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[6](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L6-L6), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol
+
+7:interface IStaking {	// @audit-issue missing `@title` tag
+
+14:interface IStakingFactory {	// @audit-issue missing `@title` tag
+
+22:interface IToken {	// @audit-issue missing `@title` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L7-L7), [14](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L14-L14), [22](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L22-L22), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol
+
+7:interface IBridge {	// @audit-issue missing `@title` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L7-L7), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IDonatorBlacklist.sol
+
+5:interface IDonatorBlacklist {	// @audit-issue missing `@title` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IDonatorBlacklist.sol#L5-L5), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IBridgeErrors.sol
+
+4:interface IBridgeErrors {	// @audit-issue missing `@title` tag
+```
+[4](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IBridgeErrors.sol#L4-L4), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IErrorsTokenomics.sol
+
+5:interface IErrorsTokenomics {	// @audit-issue missing `@title` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IErrorsTokenomics.sol#L5-L5), 
+
+
+```solidity
+Path: ./registries/contracts/utils/SafeTransferLib.sol
+
+16:library SafeTransferLib {	// @audit-issue missing `@title` tag
+```
+[16](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/utils/SafeTransferLib.sol#L16-L16), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingVerifier.sol
+
+5:interface IStaking {	// @audit-issue missing `@title` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L5-L5), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingActivityChecker.sol
+
+5:interface IMultisig {	// @audit-issue missing `@title` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingActivityChecker.sol#L5-L5), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingBase.sol
+
+7:interface IActivityChecker {	// @audit-issue missing `@title` tag
+
+30:interface IService {	// @audit-issue missing `@title` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L7-L7), [30](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L30-L30), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingToken.sol
+
+11:interface IServiceTokenUtility {	// @audit-issue missing `@title` tag
+```
+[11](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L11-L11), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingFactory.sol
+
+7:interface IStaking {	// @audit-issue missing `@title` tag
+
+14:interface IStakingVerifier {	// @audit-issue missing `@title` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L7-L7), [14](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L14-L14), 
+
+
+```solidity
+Path: ./governance/contracts/VoteWeighting.sol
+
+5:interface IDispenser {	// @audit-issue missing `@title` tag
+
+16:interface IVEOLAS {	// @audit-issue missing `@title` tag
+```
+[5](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L5-L5), [16](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L16-L16), 
+
+
+#### Recommendation
+
+Follow the official [Solidity guidelines](https://docs.soliditylang.org/en/v0.8.17/style-guide.html).
+
+### NatSpec: Use `@inheritdoc` for overriden functions.
+Natural Specification (NatSpec) comments are crucial for understanding the role of function arguments in your Solidity code. Including @param tags will not only improve your code's readability but also its maintainability by clearly defining each argument's purpose. [Dive Deeper into NatSpec Guidelines](https://docs.soliditylang.org/en/develop/natspec-format.html)
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol
+
+89:    function _sendMessage(uint256 amount, bytes memory bridgePayload) internal override {	// @audit-issue missing `@inheritdoc` tag
+
+133:    function receivePayloadAndTokens(	// @audit-issue missing `@inheritdoc` tag
+```
+[89](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L89-L89), [133](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L133-L133), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol
+
+52:    function _processMessageFromRoot(uint256, address sender, bytes memory data) internal override {	// @audit-issue missing `@inheritdoc` tag
+
+59:    function setFxRootTunnel(address l1Processor) external override {	// @audit-issue missing `@inheritdoc` tag
+```
+[52](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol#L52-L52), [59](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol#L59-L59), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol
+
+132:    function setL2TargetDispenser(address l2Dispenser) external override {	// @audit-issue missing `@inheritdoc` tag
+```
+[132](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L132-L132), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol
+
+91:    function _processMessageFromChild(bytes memory data) internal override {	// @audit-issue missing `@inheritdoc` tag
+
+98:    function setFxChildTunnel(address l2Dispenser) public override {	// @audit-issue missing `@inheritdoc` tag
+
+117:    function setL2TargetDispenser(address l2Dispenser) external override {	// @audit-issue missing `@inheritdoc` tag
+```
+[91](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L91-L91), [98](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L98-L98), [117](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L117-L117), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingNativeToken.sol
+
+28:    function _withdraw(address to, uint256 amount) internal override {	// @audit-issue missing `@inheritdoc` tag
+```
+[28](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingNativeToken.sol#L28-L28), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingToken.sol
+
+74:    function _checkTokenStakingDeposit(uint256 serviceId, uint256, uint32[] memory serviceAgentIds) internal view override {	// @audit-issue missing `@inheritdoc` tag
+
+104:    function _withdraw(address to, uint256 amount) internal override {	// @audit-issue missing `@inheritdoc` tag
+```
+[74](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L74-L74), [104](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L104-L104), 
+
+
+#### Recommendation
+
+Follow the official [Solidity guidelines](https://docs.soliditylang.org/en/v0.8.17/style-guide.html).
+
+### NatSpec: Function `@return` tag is missing
+Natural Specification (NatSpec) comments are crucial for understanding the role of function arguments in your Solidity code. Including `@return` tag will not only improve your code's readability but also its maintainability by clearly defining each argument's purpose. [Dive Deeper into NatSpec Guidelines](https://docs.soliditylang.org/en/develop/natspec-format.html)
+
+```solidity
+Path: ./tokenomics/contracts/Tokenomics.sol
+
+61:    function getVotes(address account) external view returns (uint256);	// @audit-issue missing `@return` tag
+```
+[61](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L61-L61), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol
+
+63:    function l2ToL1Sender() external view returns (address);	// @audit-issue missing `@return` tag
+
+119:    function _sendMessage(	// @audit-issue missing `@return` tag
+```
+[63](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L63-L63), [119](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L119-L119), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol
+
+95:    function _sendMessage(	// @audit-issue missing `@return` tag
+```
+[95](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L95-L95), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol
+
+10:    function quoteEVMDeliveryPrice(	// @audit-issue missing `@return` tag
+```
+[10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L10-L10), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol
+
+25:    function messageSender() external returns (address);	// @audit-issue missing `@return` tag
+
+51:    function _sendMessage(	// @audit-issue missing `@return` tag
+```
+[25](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L25-L25), [51](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L51-L51), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol
+
+59:    function _sendMessage(	// @audit-issue missing `@return` tag
+
+138:    function getBridgingDecimals() external pure override returns (uint256) {	// @audit-issue missing `@return` tag
+```
+[59](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L59-L59), [138](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L138-L138), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol
+
+19:    function messageSender() external returns (address);	// @audit-issue missing `@return` tag
+```
+[19](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L19-L19), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol
+
+57:    function _sendMessage(	// @audit-issue missing `@return` tag
+```
+[57](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L57-L57), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingBase.sol
+
+522:    function _calculateStakingRewards() internal view returns (	// @audit-issue missing `@return` tag
+```
+[522](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L522-L522), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingProxy.sol
+
+54:    function getImplementation() external view returns (address implementation) {	// @audit-issue missing `@return` tag
+```
+[54](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingProxy.sol#L54-L54), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingFactory.sol
+
+141:    function getProxyAddressWithNonce(address implementation, uint256 localNonce) public view returns (address) {	// @audit-issue missing `@return` tag
+
+161:    function getProxyAddress(address implementation) external view returns (address) {	// @audit-issue missing `@return` tag
+
+168:    function createStakingInstance(	// @audit-issue missing `@return` tag
+```
+[141](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L141-L141), [161](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L161-L161), [168](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L168-L168), 
+
+
+```solidity
+Path: ./governance/contracts/VoteWeighting.sol
+
+578:    function _maxAndSub(uint256 a, uint256 b) internal pure returns (uint256) {	// @audit-issue missing `@return` tag
+
+779:    function getNextAllowedVotingTimes(	// @audit-issue missing `@return` tag
+```
+[578](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L578-L578), [779](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L779-L779), 
+
+
+#### Recommendation
+
+Follow the official [Solidity guidelines](https://docs.soliditylang.org/en/v0.8.17/style-guide.html).
+
+### NatSpec: Function declarations should have `@notice` tag
+The `@notice` tag in NatSpec comments is used to provide important explanations to end users about what a function does. It appears that this contract's function declarations are missing `@notice` tags in their NatSpec annotations.
+
+The absence of `@notice` tags reduces the contract's transparency and could lead to misunderstandings about a function's purpose and behavior.  [Dive Deeper into NatSpec Guidelines](https://docs.soliditylang.org/en/develop/natspec-format.html)
+
+```solidity
+Path: ./tokenomics/contracts/Tokenomics.sol
+
+13:    function timeLaunch() external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+21:    function ownerOf(uint256 tokenId) external view returns (address);	// @audit-issue missing `@notice` tag
+
+25:    function totalSupply() external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+33:    function rebalanceTreasury(uint256 treasuryRewards) external returns (bool success);	// @audit-issue missing `@notice` tag
+
+46:    function exists(uint256 serviceId) external view returns (bool);	// @audit-issue missing `@notice` tag
+
+61:    function getVotes(address account) external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+377:    constructor()	// @audit-issue missing `@notice` tag
+
+516:    function tokenomicsImplementation() external view returns (address implementation) {	// @audit-issue missing `@notice` tag
+
+546:    function changeOwner(address newOwner) external {	// @audit-issue missing `@notice` tag
+
+565:    function changeManagers(address _treasury, address _depository, address _dispenser) external {	// @audit-issue missing `@notice` tag
+
+592:    function changeRegistries(address _componentRegistry, address _agentRegistry, address _serviceRegistry) external {	// @audit-issue missing `@notice` tag
+
+703:    function changeIncentiveFractions(	// @audit-issue missing `@notice` tag
+
+751:    function changeStakingParams(uint256 _maxStakingIncentive, uint256 _minStakingWeight) external {	// @audit-issue missing `@notice` tag
+
+808:    function refundFromBondProgram(uint256 amount) external {	// @audit-issue missing `@notice` tag
+
+826:    function refundFromStaking(uint256 amount) external {	// @audit-issue missing `@notice` tag
+
+847:    function _finalizeIncentivesForUnitId(uint256 epochNum, uint256 unitType, uint256 unitId) internal {	// @audit-issue missing `@notice` tag
+
+884:    function _trackServiceDonations(	// @audit-issue missing `@notice` tag
+
+1033:    function _calculateIDF(uint256 treasuryRewards, uint256 numNewOwners) internal view returns (uint256 idf) {	// @audit-issue missing `@notice` tag
+
+1466:    function getUnitPoint(uint256 epoch, uint256 unitType) external view returns (UnitPoint memory) {	// @audit-issue missing `@notice` tag
+
+1472:    function getLastIDF() external view returns (uint256) {	// @audit-issue missing `@notice` tag
+
+1479:    function getEpochEndTime(uint256 epoch) external view returns (uint256) {	// @audit-issue missing `@notice` tag
+```
+[13](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L13-L13), [21](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L21-L21), [25](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L25-L25), [33](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L33-L33), [46](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L46-L46), [61](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L61-L61), [377](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L377-L377), [516](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L516-L516), [546](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L546-L546), [565](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L565-L565), [592](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L592-L592), [703](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L703-L703), [751](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L751-L751), [808](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L808-L808), [826](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L826-L826), [847](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L847-L847), [884](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L884-L884), [1033](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L1033-L1033), [1466](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L1466-L1466), [1472](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L1472-L1472), [1479](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Tokenomics.sol#L1479-L1479), 
+
+
+```solidity
+Path: ./tokenomics/contracts/TokenomicsConstants.sol
+
+33:    function getSupplyCapForYear(uint256 numYears) public pure returns (uint256 supplyCap) {	// @audit-issue missing `@notice` tag
+
+69:    function getInflationForYear(uint256 numYears) public pure returns (uint256 inflationAmount) {	// @audit-issue missing `@notice` tag
+```
+[33](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/TokenomicsConstants.sol#L33-L33), [69](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/TokenomicsConstants.sol#L69-L69), 
+
+
+```solidity
+Path: ./tokenomics/contracts/Dispenser.sol
+
+11:    function sendMessage(address target, uint256 stakingIncentive, bytes memory bridgePayload,	// @audit-issue missing `@notice` tag
+
+19:    function sendMessageBatch(address[] memory targets, uint256[] memory stakingIncentives, bytes memory bridgePayload,	// @audit-issue missing `@notice` tag
+
+27:    function sendMessageNonEVM(bytes32 target, uint256 stakingIncentive, bytes memory bridgePayload,	// @audit-issue missing `@notice` tag
+
+35:    function sendMessageBatchNonEVM(bytes32[] memory targets, uint256[] memory stakingIncentives,	// @audit-issue missing `@notice` tag
+
+40:    function getBridgingDecimals() external pure returns (uint256);	// @audit-issue missing `@notice` tag
+
+48:    function balanceOf(address account) external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+54:    function transfer(address to, uint256 amount) external returns (bool);	// @audit-issue missing `@notice` tag
+
+120:    function epochCounter() external view returns (uint32);	// @audit-issue missing `@notice` tag
+
+124:    function epochLen() external view returns (uint32);	// @audit-issue missing `@notice` tag
+
+129:    function getEpochEndTime(uint256 epoch) external view returns (uint256 endTime);	// @audit-issue missing `@notice` tag
+
+134:    function mapEpochStakingPoints(uint256 eCounter) external view returns (StakingPoint memory);	// @audit-issue missing `@notice` tag
+
+138:    function refundFromStaking(uint256 amount) external;	// @audit-issue missing `@notice` tag
+
+156:    function paused() external returns (uint8);	// @audit-issue missing `@notice` tag
+
+170:    function mapNomineeIds(bytes32 nomineeHash) external returns (uint256);	// @audit-issue missing `@notice` tag
+
+175:    function checkpointNominee(bytes32 account, uint256 chainId) external;	// @audit-issue missing `@notice` tag
+
+185:    function nomineeRelativeWeight(bytes32 account, uint256 chainId, uint256 time) external view returns (uint256, uint256);	// @audit-issue missing `@notice` tag
+
+315:    constructor(	// @audit-issue missing `@notice` tag
+
+356:    function _checkpointNomineeAndGetClaimedEpochCounters(	// @audit-issue missing `@notice` tag
+
+408:    function _distributeStakingIncentives(	// @audit-issue missing `@notice` tag
+
+441:    function _distributeStakingIncentivesBatch(	// @audit-issue missing `@notice` tag
+
+573:    function _calculateStakingIncentivesBatch(	// @audit-issue missing `@notice` tag
+
+636:    function changeOwner(address newOwner) external {	// @audit-issue missing `@notice` tag
+
+655:    function changeManagers(address _tokenomics, address _treasury, address _voteWeighting) external {	// @audit-issue missing `@notice` tag
+
+683:    function changeStakingParams(uint256 _maxNumClaimingEpochs, uint256 _maxNumStakingTargets) external {	// @audit-issue missing `@notice` tag
+
+732:    function addNominee(bytes32 nomineeHash) external {	// @audit-issue missing `@notice` tag
+
+750:    function removeNominee(bytes32 nomineeHash) external {	// @audit-issue missing `@notice` tag
+
+953:    function claimStakingIncentives(	// @audit-issue missing `@notice` tag
+
+1129:    function retain() external {	// @audit-issue missing `@notice` tag
+
+1241:    function setPauseState(Pause pauseState) external {	// @audit-issue missing `@notice` tag
+```
+[11](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L11-L11), [19](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L19-L19), [27](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L27-L27), [35](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L35-L35), [40](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L40-L40), [48](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L48-L48), [54](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L54-L54), [120](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L120-L120), [124](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L124-L124), [129](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L129-L129), [134](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L134-L134), [138](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L138-L138), [156](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L156-L156), [170](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L170-L170), [175](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L175-L175), [185](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L185-L185), [315](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L315-L315), [356](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L356-L356), [408](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L408-L408), [441](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L441-L441), [573](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L573-L573), [636](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L636-L636), [655](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L655-L655), [683](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L683-L683), [732](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L732-L732), [750](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L750-L750), [953](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L953-L953), [1129](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L1129-L1129), [1241](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/Dispenser.sol#L1241-L1241), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol
+
+48:    function createRetryableTicket(	// @audit-issue missing `@notice` tag
+
+89:    constructor(	// @audit-issue missing `@notice` tag
+
+196:    function receiveMessage(bytes memory data) external {	// @audit-issue missing `@notice` tag
+```
+[48](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L48-L48), [89](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L89-L89), [196](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumDepositProcessorL1.sol#L196-L196), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol
+
+47:    constructor(	// @audit-issue missing `@notice` tag
+
+56:    function _sendMessage(uint256 amount, bytes memory bridgePayload) internal override {	// @audit-issue missing `@notice` tag
+
+96:    function receiveMessage(bytes memory data) external payable {	// @audit-issue missing `@notice` tag
+```
+[47](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol#L47-L47), [56](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol#L56-L56), [96](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismTargetDispenserL2.sol#L96-L96), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol
+
+7:    function syncWithheldAmount(uint256 chainId, uint256 amount) external;	// @audit-issue missing `@notice` tag
+
+15:    function approve(address spender, uint256 amount) external returns (bool);	// @audit-issue missing `@notice` tag
+
+59:    constructor(	// @audit-issue missing `@notice` tag
+
+107:    function _receiveMessage(address l1Relayer, address l2Dispenser, bytes memory data) internal virtual {	// @audit-issue missing `@notice` tag
+
+132:    function sendMessage(	// @audit-issue missing `@notice` tag
+
+164:    function sendMessageBatch(	// @audit-issue missing `@notice` tag
+
+186:    function _setL2TargetDispenser(address l2Dispenser) internal {	// @audit-issue missing `@notice` tag
+
+206:    function setL2TargetDispenser(address l2Dispenser) external virtual {	// @audit-issue missing `@notice` tag
+
+212:    function getBridgingDecimals() external pure virtual returns (uint256) {	// @audit-issue missing `@notice` tag
+```
+[7](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L7-L7), [15](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L15-L15), [59](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L59-L59), [107](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L107-L107), [132](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L132-L132), [164](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L164-L164), [186](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L186-L186), [206](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L206-L206), [212](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultDepositProcessorL1.sol#L212-L212), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol
+
+53:    function _sendMessage(uint256 amount, bytes memory) internal override {	// @audit-issue missing `@notice` tag
+```
+[53](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/ArbitrumTargetDispenserL2.sol#L53-L53), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol
+
+76:    constructor(	// @audit-issue missing `@notice` tag
+
+95:    function _sendMessage(	// @audit-issue missing `@notice` tag
+
+148:    function receiveMessage(bytes memory data) external payable {	// @audit-issue missing `@notice` tag
+```
+[76](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L76-L76), [95](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L95-L95), [148](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/OptimismDepositProcessorL1.sol#L148-L148), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/EthereumDepositProcessor.sol
+
+9:    function approve(address spender, uint256 amount) external returns (bool);	// @audit-issue missing `@notice` tag
+
+15:    function transfer(address to, uint256 amount) external returns (bool);	// @audit-issue missing `@notice` tag
+
+21:    function deposit(uint256 amount) external;	// @audit-issue missing `@notice` tag
+
+28:    function verifyInstanceAndGetEmissionsAmount(address instance) external view returns (uint256 amount);	// @audit-issue missing `@notice` tag
+
+70:    constructor(address _olas, address _dispenser, address _stakingFactory, address _timelock) {	// @audit-issue missing `@notice` tag
+
+86:    function _deposit(address[] memory targets, uint256[] memory stakingIncentives) internal {	// @audit-issue missing `@notice` tag
+
+130:    function sendMessage(	// @audit-issue missing `@notice` tag
+
+155:    function sendMessageBatch(	// @audit-issue missing `@notice` tag
+```
+[9](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L9-L9), [15](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L15-L15), [21](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L21-L21), [28](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L28-L28), [70](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L70-L70), [86](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L86-L86), [130](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L130-L130), [155](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/EthereumDepositProcessor.sol#L155-L155), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol
+
+10:    function quoteEVMDeliveryPrice(	// @audit-issue missing `@notice` tag
+
+64:    constructor(	// @audit-issue missing `@notice` tag
+
+89:    function _sendMessage(uint256 amount, bytes memory bridgePayload) internal override {	// @audit-issue missing `@notice` tag
+```
+[10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L10-L10), [64](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L64-L64), [89](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeTargetDispenserL2.sol#L89-L89), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol
+
+15:    function requireToPassMessage(address target, bytes memory data, uint256 maxGasLimit) external returns (bytes32);	// @audit-issue missing `@notice` tag
+
+21:    function relayTokensAndCall(address token, address receiver, uint256 amount, bytes memory payload) external;	// @audit-issue missing `@notice` tag
+
+25:    function messageSender() external returns (address);	// @audit-issue missing `@notice` tag
+
+42:    constructor(	// @audit-issue missing `@notice` tag
+
+51:    function _sendMessage(	// @audit-issue missing `@notice` tag
+
+98:    function receiveMessage(bytes memory data) external {	// @audit-issue missing `@notice` tag
+```
+[15](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L15-L15), [21](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L21-L21), [25](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L25-L25), [42](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L42-L42), [51](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L51-L51), [98](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisDepositProcessorL1.sol#L98-L98), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol
+
+20:    constructor(	// @audit-issue missing `@notice` tag
+
+32:    function _sendMessage(uint256 amount, bytes memory) internal override {	// @audit-issue missing `@notice` tag
+
+59:    function setFxRootTunnel(address l1Processor) external override {	// @audit-issue missing `@notice` tag
+```
+[20](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol#L20-L20), [32](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol#L32-L32), [59](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonTargetDispenserL2.sol#L59-L59), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol
+
+28:    constructor(	// @audit-issue missing `@notice` tag
+
+59:    function _sendMessage(	// @audit-issue missing `@notice` tag
+
+132:    function setL2TargetDispenser(address l2Dispenser) external override {	// @audit-issue missing `@notice` tag
+
+138:    function getBridgingDecimals() external pure override returns (uint256) {	// @audit-issue missing `@notice` tag
+```
+[28](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L28-L28), [59](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L59-L59), [132](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L132-L132), [138](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/WormholeDepositProcessorL1.sol#L138-L138), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol
+
+15:    function requireToPassMessage(address target, bytes memory data, uint256 maxGasLimit) external returns (bytes32);	// @audit-issue missing `@notice` tag
+
+19:    function messageSender() external returns (address);	// @audit-issue missing `@notice` tag
+
+39:    constructor(	// @audit-issue missing `@notice` tag
+
+58:    function _sendMessage(uint256 amount, bytes memory bridgePayload) internal override {	// @audit-issue missing `@notice` tag
+
+87:    function receiveMessage(bytes memory data) external {	// @audit-issue missing `@notice` tag
+
+99:    function onTokenBridged(address, uint256, bytes calldata data) external {	// @audit-issue missing `@notice` tag
+```
+[15](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L15-L15), [19](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L19-L19), [39](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L39-L39), [58](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L58-L58), [87](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L87-L87), [99](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/GnosisTargetDispenserL2.sol#L99-L99), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol
+
+10:    function deposit(uint256 amount) external;	// @audit-issue missing `@notice` tag
+
+18:    function verifyInstanceAndGetEmissionsAmount(address instance) external view returns (uint256 amount);	// @audit-issue missing `@notice` tag
+
+26:    function balanceOf(address account) external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+32:    function approve(address spender, uint256 amount) external returns (bool);	// @audit-issue missing `@notice` tag
+
+38:    function transfer(address to, uint256 amount) external returns (bool);	// @audit-issue missing `@notice` tag
+
+101:    constructor(	// @audit-issue missing `@notice` tag
+
+139:    function _processData(bytes memory data) internal {	// @audit-issue missing `@notice` tag
+
+218:    function _sendMessage(uint256 amount, bytes memory bridgePayload) internal virtual;	// @audit-issue missing `@notice` tag
+
+224:    function _receiveMessage(	// @audit-issue missing `@notice` tag
+
+247:    function changeOwner(address newOwner) external {	// @audit-issue missing `@notice` tag
+
+266:    function redeem(address target, uint256 amount, uint256 batchNonce) external {	// @audit-issue missing `@notice` tag
+
+323:    function syncWithheldTokens(bytes memory bridgePayload) external payable {	// @audit-issue missing `@notice` tag
+
+353:    function pause() external {	// @audit-issue missing `@notice` tag
+
+364:    function unpause() external {	// @audit-issue missing `@notice` tag
+
+458:    receive() external payable {	// @audit-issue missing `@notice` tag
+```
+[10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L10-L10), [18](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L18-L18), [26](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L26-L26), [32](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L32-L32), [38](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L38-L38), [101](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L101-L101), [139](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L139-L139), [218](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L218-L218), [224](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L224-L224), [247](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L247-L247), [266](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L266-L266), [323](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L323-L323), [353](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L353-L353), [364](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L364-L364), [458](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/DefaultTargetDispenserL2.sol#L458-L458), 
+
+
+```solidity
+Path: ./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol
+
+36:    constructor(	// @audit-issue missing `@notice` tag
+
+57:    function _sendMessage(	// @audit-issue missing `@notice` tag
+
+98:    function setFxChildTunnel(address l2Dispenser) public override {	// @audit-issue missing `@notice` tag
+
+117:    function setL2TargetDispenser(address l2Dispenser) external override {	// @audit-issue missing `@notice` tag
+```
+[36](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L36-L36), [57](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L57-L57), [98](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L98-L98), [117](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/staking/PolygonDepositProcessorL1.sol#L117-L117), 
+
+
+```solidity
+Path: ./tokenomics/contracts/interfaces/IDonatorBlacklist.sol
+
+9:    function isDonatorBlacklisted(address account) external view returns (bool status);	// @audit-issue missing `@notice` tag
+```
+[9](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./tokenomics/contracts/interfaces/IDonatorBlacklist.sol#L9-L9), 
+
+
+```solidity
+Path: ./registries/contracts/utils/SafeTransferLib.sol
+
+22:    function safeTransferFrom(address token, address from, address to, uint256 amount) internal {	// @audit-issue missing `@notice` tag
+```
+[22](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/utils/SafeTransferLib.sol#L22-L22), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingVerifier.sol
+
+8:    function rewardsPerSecond() external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+12:    function maxNumServices() external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+16:    function stakingToken() external view returns (address);	// @audit-issue missing `@notice` tag
+
+74:    constructor(address _olas, uint256 _rewardsPerSecondLimit, uint256 _timeForEmissionsLimit,	// @audit-issue missing `@notice` tag
+
+96:    function changeOwner(address newOwner) external {	// @audit-issue missing `@notice` tag
+
+113:    function setImplementationsCheck(bool setCheck) external {	// @audit-issue missing `@notice` tag
+
+166:    function verifyImplementation(address implementation) external view returns (bool){	// @audit-issue missing `@notice` tag
+
+179:    function verifyInstance(address instance, address implementation) external view returns (bool) {	// @audit-issue missing `@notice` tag
+
+229:    function changeStakingLimits(	// @audit-issue missing `@notice` tag
+```
+[8](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L8-L8), [12](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L12-L12), [16](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L16-L16), [74](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L74-L74), [96](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L96-L96), [113](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L113-L113), [166](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L166-L166), [179](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L179-L179), [229](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingVerifier.sol#L229-L229), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingNativeToken.sol
+
+20:    function initialize(StakingParams memory _stakingParams) external {	// @audit-issue missing `@notice` tag
+
+39:    receive() external payable {	// @audit-issue missing `@notice` tag
+```
+[20](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingNativeToken.sol#L20-L20), [39](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingNativeToken.sol#L39-L39), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingActivityChecker.sol
+
+8:    function nonce() external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+24:    constructor(uint256 _livenessRatio) {	// @audit-issue missing `@notice` tag
+
+36:    function getMultisigNonces(address multisig) external view virtual returns (uint256[] memory nonces) {	// @audit-issue missing `@notice` tag
+```
+[8](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingActivityChecker.sol#L8-L8), [24](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingActivityChecker.sol#L24-L24), [36](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingActivityChecker.sol#L36-L36), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingBase.sol
+
+11:    function getMultisigNonces(address multisig) external view returns (uint256[] memory nonces);	// @audit-issue missing `@notice` tag
+
+72:    function safeTransferFrom(address from, address to, uint256 id) external;	// @audit-issue missing `@notice` tag
+
+77:    function getService(uint256 serviceId) external view returns (Service memory service);	// @audit-issue missing `@notice` tag
+
+83:    function getAgentParams(uint256 serviceId) external view	// @audit-issue missing `@notice` tag
+
+278:    function _initialize(	// @audit-issue missing `@notice` tag
+
+366:    function _checkTokenStakingDeposit(	// @audit-issue missing `@notice` tag
+
+390:    function _withdraw(address to, uint256 amount) internal virtual;	// @audit-issue missing `@notice` tag
+
+398:    function _checkRatioPass(	// @audit-issue missing `@notice` tag
+
+430:    function _evict(	// @audit-issue missing `@notice` tag
+
+482:    function _claim(uint256 serviceId, bool execCheckPoint) internal returns (uint256 reward) {	// @audit-issue missing `@notice` tag
+
+522:    function _calculateStakingRewards() internal view returns (	// @audit-issue missing `@notice` tag
+
+591:    function checkpoint() public returns (	// @audit-issue missing `@notice` tag
+
+805:    function unstake(uint256 serviceId) external returns (uint256 reward) {	// @audit-issue missing `@notice` tag
+
+877:    function claim(uint256 serviceId) external returns (uint256) {	// @audit-issue missing `@notice` tag
+
+884:    function checkpointAndClaim(uint256 serviceId) external returns (uint256) {	// @audit-issue missing `@notice` tag
+
+916:    function calculateStakingReward(uint256 serviceId) external view returns (uint256 reward) {	// @audit-issue missing `@notice` tag
+
+928:    function getStakingState(uint256 serviceId) external view returns (StakingState stakingState) {	// @audit-issue missing `@notice` tag
+
+939:    function getNextRewardCheckpointTimestamp() external view returns (uint256 tsNext) {	// @audit-issue missing `@notice` tag
+
+947:    function getServiceInfo(uint256 serviceId) external view returns (ServiceInfo memory sInfo) {	// @audit-issue missing `@notice` tag
+
+953:    function getServiceIds() public view returns (uint256[] memory) {	// @audit-issue missing `@notice` tag
+
+959:    function getAgentIds() external view returns (uint256[] memory) {	// @audit-issue missing `@notice` tag
+```
+[11](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L11-L11), [72](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L72-L72), [77](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L77-L77), [83](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L83-L83), [278](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L278-L278), [366](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L366-L366), [390](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L390-L390), [398](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L398-L398), [430](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L430-L430), [482](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L482-L482), [522](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L522-L522), [591](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L591-L591), [805](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L805-L805), [877](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L877-L877), [884](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L884-L884), [916](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L916-L916), [928](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L928-L928), [939](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L939-L939), [947](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L947-L947), [953](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L953-L953), [959](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingBase.sol#L959-L959), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingToken.sol
+
+16:    function mapServiceIdTokenDeposit(uint256 serviceId) external view returns (address, uint96);	// @audit-issue missing `@notice` tag
+
+22:    function getAgentBond(uint256 serviceId, uint256 agentId) external view returns (uint256 bond);	// @audit-issue missing `@notice` tag
+
+54:    function initialize(	// @audit-issue missing `@notice` tag
+
+74:    function _checkTokenStakingDeposit(uint256 serviceId, uint256, uint32[] memory serviceAgentIds) internal view override {	// @audit-issue missing `@notice` tag
+
+115:    function deposit(uint256 amount) external {	// @audit-issue missing `@notice` tag
+```
+[16](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L16-L16), [22](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L22-L22), [54](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L54-L54), [74](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L74-L74), [115](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingToken.sol#L115-L115), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingProxy.sol
+
+27:    constructor(address implementation) {	// @audit-issue missing `@notice` tag
+
+40:    fallback() external payable {	// @audit-issue missing `@notice` tag
+
+54:    function getImplementation() external view returns (address implementation) {	// @audit-issue missing `@notice` tag
+```
+[27](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingProxy.sol#L27-L27), [40](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingProxy.sol#L40-L40), [54](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingProxy.sol#L54-L54), 
+
+
+```solidity
+Path: ./registries/contracts/staking/StakingFactory.sol
+
+10:    function emissionsAmount() external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+18:    function verifyImplementation(address implementation) external view returns (bool);	// @audit-issue missing `@notice` tag
+
+24:    function verifyInstance(address instance, address implementation) external view returns (bool);	// @audit-issue missing `@notice` tag
+
+28:    function getEmissionsAmountLimit(address) external view returns (uint256);	// @audit-issue missing `@notice` tag
+
+103:    constructor(address _verifier) {	// @audit-issue missing `@notice` tag
+
+110:    function changeOwner(address newOwner) external {	// @audit-issue missing `@notice` tag
+
+127:    function changeVerifier(address newVerifier) external {	// @audit-issue missing `@notice` tag
+
+161:    function getProxyAddress(address implementation) external view returns (address) {	// @audit-issue missing `@notice` tag
+
+168:    function createStakingInstance(	// @audit-issue missing `@notice` tag
+
+249:    function setInstanceStatus(address instance, bool isEnabled) external {	// @audit-issue missing `@notice` tag
+
+267:    function verifyInstance(address instance) public view returns (bool) {	// @audit-issue missing `@notice` tag
+
+294:    function verifyInstanceAndGetEmissionsAmount(address instance) external view returns (uint256 amount) {	// @audit-issue missing `@notice` tag
+```
+[10](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L10-L10), [18](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L18-L18), [24](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L24-L24), [28](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L28-L28), [103](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L103-L103), [110](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L110-L110), [127](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L127-L127), [161](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L161-L161), [168](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L168-L168), [249](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L249-L249), [267](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L267-L267), [294](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./registries/contracts/staking/StakingFactory.sol#L294-L294), 
+
+
+```solidity
+Path: ./governance/contracts/VoteWeighting.sol
+
+8:    function addNominee(bytes32 nomineeHash) external;	// @audit-issue missing `@notice` tag
+
+12:    function removeNominee(bytes32 nomineeHash) external;	// @audit-issue missing `@notice` tag
+
+36:    function lockedEnd(address account) external view returns (uint256 unlockTime);	// @audit-issue missing `@notice` tag
+
+41:    function getLastUserPoint(address account) external view returns (PointVoting memory pv);	// @audit-issue missing `@notice` tag
+
+205:    constructor(address _ve) {	// @audit-issue missing `@notice` tag
+
+223:    function _getSum() internal returns (uint256) {	// @audit-issue missing `@notice` tag
+
+254:    function _getWeight(bytes32 account, uint256 chainId) internal returns (uint256) {	// @audit-issue missing `@notice` tag
+
+292:    function _addNominee(Nominee memory nominee) internal {	// @audit-issue missing `@notice` tag
+
+324:    function addNomineeEVM(address account, uint256 chainId) external {	// @audit-issue missing `@notice` tag
+
+349:    function addNomineeNonEVM(bytes32 account, uint256 chainId) external {	// @audit-issue missing `@notice` tag
+
+368:    function changeOwner(address newOwner) external {	// @audit-issue missing `@notice` tag
+
+397:    function checkpoint() external {	// @audit-issue missing `@notice` tag
+
+406:    function checkpointNominee(bytes32 account, uint256 chainId) external {	// @audit-issue missing `@notice` tag
+
+419:    function _nomineeRelativeWeight(	// @audit-issue missing `@notice` tag
+
+442:    function nomineeRelativeWeight(	// @audit-issue missing `@notice` tag
+
+473:    function voteForNomineeWeights(bytes32 account, uint256 chainId, uint256 weight) public {	// @audit-issue missing `@notice` tag
+
+563:    function voteForNomineeWeightsBatch(	// @audit-issue missing `@notice` tag
+
+578:    function _maxAndSub(uint256 a, uint256 b) internal pure returns (uint256) {	// @audit-issue missing `@notice` tag
+
+641:    function revokeRemovedNomineeVotingPower(bytes32 account, uint256 chainId) external {	// @audit-issue missing `@notice` tag
+
+674:    function getNomineeWeight(bytes32 account, uint256 chainId) external view returns (uint256) {	// @audit-issue missing `@notice` tag
+
+684:    function getWeightsSum() external view returns (uint256) {	// @audit-issue missing `@notice` tag
+
+720:    function getNomineeId(bytes32 account, uint256 chainId) external view returns (uint256) {	// @audit-issue missing `@notice` tag
+
+732:    function getRemovedNomineeId(bytes32 account, uint256 chainId) external view returns (uint256) {	// @audit-issue missing `@notice` tag
+```
+[8](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L8-L8), [12](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L12-L12), [36](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L36-L36), [41](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L41-L41), [205](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L205-L205), [223](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L223-L223), [254](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L254-L254), [292](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L292-L292), [324](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L324-L324), [349](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L349-L349), [368](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L368-L368), [397](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L397-L397), [406](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L406-L406), [419](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L419-L419), [442](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L442-L442), [473](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L473-L473), [563](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L563-L563), [578](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L578-L578), [641](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L641-L641), [674](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L674-L674), [684](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L684-L684), [720](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L720-L720), [732](https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/./governance/contracts/VoteWeighting.sol#L732-L732), 
+
+
+#### Recommendation
+
+Follow the official [Solidity guidelines](https://docs.soliditylang.org/en/v0.8.17/style-guide.html).
