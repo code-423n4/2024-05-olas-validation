@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Zero Value Checks: Added checks to ensure values are not zero where not expected in the _processData and redeem functions ",
+  "issueId": 138,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/138"
+}
