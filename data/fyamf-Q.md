@@ -1,3 +1,4 @@
+### Issue1
 The structure field `maxStakingAmount` in `Dispenser`, and `maxStakingIncentive` in `Tokenomics` do not match together, leading to confusion.
 ```solidity
 struct StakingPoint {
@@ -36,3 +37,12 @@ https://github.com/code-423n4/2024-05-olas/blob/main/tokenomics/contracts/Tokeno
     }
 ```
 https://github.com/code-423n4/2024-05-olas/blob/main/tokenomics/contracts/Dispenser.sol#L96
+
+### Issue2
+The revert message is not correct, and it should be `revert ManagerOnly(msg.sender, dispenser );` instead of `revert ManagerOnly(msg.sender, depository);`.
+```solidity
+        if (dispenser != msg.sender) {
+            revert ManagerOnly(msg.sender, depository);
+        }
+```
+https://github.com/code-423n4/2024-05-olas/blob/main/tokenomics/contracts/Tokenomics.sol#L829
