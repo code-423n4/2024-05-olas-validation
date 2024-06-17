@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Potential Overflow Risk in syncWithheldAmount Function",
+  "issueId": 198,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/198"
+}
