@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Unexpected State Modification in `calculateStakingIncentives` Function Due to Incorrect Usage.",
+  "issueId": 195,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/195"
+}
