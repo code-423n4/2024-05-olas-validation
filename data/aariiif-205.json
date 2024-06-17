@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Zero Incentive Calculation Issue in _trackServiceDonations Function.",
+  "issueId": 205,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/205"
+}
