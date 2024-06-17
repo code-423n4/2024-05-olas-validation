@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "nonn_ac",
+  "risk": "2",
+  "title": "Inconsistent Agent Instance Handling in service struct  and stakingParams",
+  "issueId": 181,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/181"
+}
