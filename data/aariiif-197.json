@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Inflated Calculation of `totalReturnAmount` in `claimStakingIncentives` Due to Incorrect Decimal Handling.",
+  "issueId": 197,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/197"
+}
