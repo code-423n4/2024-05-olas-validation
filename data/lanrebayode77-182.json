@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "lanrebayode77",
+  "risk": "2",
+  "title": "tsCheckPoint not updated after a liveness period could lead to wrong eviction and unshared reward.",
+  "issueId": 182,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/182"
+}
