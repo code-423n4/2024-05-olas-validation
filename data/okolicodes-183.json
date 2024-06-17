@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "okolicodes",
+  "risk": "2",
+  "title": "`Unstaking` failure on some chains due to `WETH` transfer Compatibility issue on some Chains.",
+  "issueId": 183,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/183"
+}
