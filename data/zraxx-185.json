@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "zraxx",
+  "risk": "3",
+  "title": "When removing nominees, the slope of pointsSum is not updated.",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/185"
+}
