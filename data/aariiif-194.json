@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Ineffective Reentrancy Guard in claimOwnerIncentives Function",
+  "issueId": 194,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/194"
+}
