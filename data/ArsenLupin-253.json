@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "ArsenLupin",
+  "risk": "2",
+  "title": "The refundAccount could loose fees, in Wormhole tx, if it is multisig wallet.",
+  "issueId": 253,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/253"
+}
