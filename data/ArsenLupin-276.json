@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "ArsenLupin",
+  "risk": "2",
+  "title": "The staking token verification is restricted only to the Olas token, while in the reality it could be any ERC20 token",
+  "issueId": 276,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/276"
+}
