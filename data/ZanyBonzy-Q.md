@@ -653,7 +653,7 @@ Call the `_getSum` function after adding slope changes
 ***
 
 
-# Removing a nominee will result in a user's votes being unusable for up to 10 days 
+## 16. Removing a nominee will result in a user's votes being unusable for up to 10 days 
 
 Links to affected code *
 
@@ -663,6 +663,55 @@ https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983c
 
 https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/governance/contracts/VoteWeighting.sol#L502
 
-## Impact
+### Impact
 
 Within the VoteWeighting contracts, users can vote for the nominee of their choice. They allocate a power of their voting power. In order to not spam-change their votes, users have a `WEIGHT_VOTE_DELAY` of 10 days. Meaning they cannot change their vote towards a nominee for 10 days. Now, when the owner calls the `removeNominee` functio, allowing him to remove a nominee. The users can can remove their votes from said nominee. However, in order to do so, the user has to call `voteForNomineeWeights`, but will not be able to do so due to the check for `nextAllowedVotingTime > block.timestamp)`, the call will revert causing the user to notm be able to vote for about 10 days.
+
+***
+
+# 17. `retainerHash` should not be encoded in constructor in case of a hard fork
+
+Links to affected code *
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/tokenomics/contracts/Dispenser.sol#L281
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/tokenomics/contracts/Dispenser.sol#L346
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/tokenomics/contracts/Dispenser.sol#L757
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/tokenomics/contracts/Dispenser.sol#L1138
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/tokenomics/contracts/Dispenser.sol#L1154
+
+### Impact
+
+The protocol aims to deploy on multiple different chains, so the risk and possibility of a hardfork is higher. Under normal circumstances, this should not be much of a problem, but Dispenser.sol constructs the `retainerHash` in the constructor using the chainId. When a hard fork occurs, the new chain id will be different from the one used to previously construct the `retainerHash`, which will lead to the `retainerHash` now being incorrect and can cause issues with the `retain` function.
+
+As can be seen from the contract, the `retainerHash` is declared and set as immutable.
+
+```solidity
+    // Retainer hash of a Nominee struct composed of retainer address with block.chainid
+    bytes32 public immutable retainerHash;
+```
+
+And in the constructor, the `retainer` address is declared, and the `retainerHash` is calculated by encoding the retainer and the current chain id.
+```solidity
+    constructor(
+        address _olas,
+        address _tokenomics,
+        address _treasury,
+        address _voteWeighting,
+        bytes32 _retainer,
+        uint256 _maxNumClaimingEpochs,
+        uint256 _maxNumStakingTargets
+    ) {
+    .....
+        retainer = _retainer;
+        retainerHash = keccak256(abi.encode(IVoteWeighting.Nominee(retainer, block.chainid)));
+    .....
+    }
+```
+
+### Recommended Mitigation Steps
+
+Do not declare retainerHash in the constructor.
