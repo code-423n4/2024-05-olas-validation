@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "cheatc0d3",
+  "risk": "3",
+  "title": "Inadequate Return Data Length Check in _checkRatioPass Function Compromises Service Activity Verification and Staking Integrity",
+  "issueId": 210,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/210"
+}
