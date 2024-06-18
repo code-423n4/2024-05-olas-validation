@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "0xRobsol",
+  "risk": "2",
+  "title": "Mismatched Array Lengths in Implementation Status Update Can Cause Misconfiguration",
+  "issueId": 221,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/221"
+}
