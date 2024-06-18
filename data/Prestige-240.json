@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "Prestige",
+  "risk": "2",
+  "title": "Stake Contract Instances can be hijacked in reorg",
+  "issueId": 240,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/240"
+}
