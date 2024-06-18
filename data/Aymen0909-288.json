@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "Aymen0909",
+  "risk": "2",
+  "title": "if `removeNominee` is called then `_getSum` will skip a week in its update",
+  "issueId": 288,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/288"
+}
