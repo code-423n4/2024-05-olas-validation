@@ -651,3 +651,18 @@ Call the `_getSum` function after adding slope changes
 ```
 
 ***
+
+
+# Removing a nominee will result in a user's votes being unusable for up to 10 days 
+
+Links to affected code *
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/governance/contracts/VoteWeighting.sol#L586
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/governance/contracts/VoteWeighting.sol#L148
+
+https://github.com/code-423n4/2024-05-olas/blob/3ce502ec8b475885b90668e617f3983cea3ae29f/governance/contracts/VoteWeighting.sol#L502
+
+## Impact
+
+Within the VoteWeighting contracts, users can vote for the nominee of their choice. They allocate a power of their voting power. In order to not spam-change their votes, users have a `WEIGHT_VOTE_DELAY` of 10 days. Meaning they cannot change their vote towards a nominee for 10 days. Now, when the owner calls the `removeNominee` functio, allowing him to remove a nominee. The users can can remove their votes from said nominee. However, in order to do so, the user has to call `voteForNomineeWeights`, but will not be able to do so due to the check for `nextAllowedVotingTime > block.timestamp)`, the call will revert causing the user to notm be able to vote for about 10 days.
