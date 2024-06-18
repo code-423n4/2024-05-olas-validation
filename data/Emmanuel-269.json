@@ -1,0 +1,8 @@
+{
+  "contest": 369,
+  "handle": "Emmanuel",
+  "risk": "2",
+  "title": "In WormholeDepositProcessorL1 and WormholeTargetDispenserL2, BRIDGE_PAYLOAD_LENGTH should be 52, not 64",
+  "issueId": 269,
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/269"
+}
