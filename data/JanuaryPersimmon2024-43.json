@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The StakingToken is incompatible with fee-on-transfer tokens",
   "issueId": 43,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/43"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/43",
+  "validatedIssueId": 101,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/101"
 }
