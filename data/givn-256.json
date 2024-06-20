@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Dispenser is unable to use excess gas refund for Arbitrum bridging ",
   "issueId": 256,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/256"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/256",
+  "validatedIssueId": 80,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/80"
 }
