@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "OptimismTargetDispenserL2:syncWithheldTokens is callable with no sanity check on payloads and can lead to permanent loss of withheld token amounts",
   "issueId": 227,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/227"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/227",
+  "validatedIssueId": 54,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/54"
 }
