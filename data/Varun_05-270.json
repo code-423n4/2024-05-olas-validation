@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Removed nominee doesn't receive staking incentives for the epoch in which they were removed which is against the intended behaviour",
   "issueId": 270,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/270"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/270",
+  "validatedIssueId": 38,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/38"
 }
