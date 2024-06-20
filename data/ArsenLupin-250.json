@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "syncWithheldTokens on Arbitrum could fail to be delivered.",
   "issueId": 250,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/250"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/250",
+  "validatedIssueId": 45,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/45"
 }
