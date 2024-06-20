@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "When removing nominees, the slope of pointsSum is not updated.",
   "issueId": 185,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/185"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/185",
+  "validatedIssueId": 93,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/93"
 }
