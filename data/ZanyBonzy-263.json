@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Removing a nominee can brick the VoteWeighting.sol",
   "issueId": 263,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/263"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/263",
+  "validatedIssueId": 78,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/78"
 }
