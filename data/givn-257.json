@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Dispenser is unable to control refunded tokens when bridging via Wormhole",
   "issueId": 257,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/257"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/257",
+  "validatedIssueId": 79,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/79"
 }
