@@ -4,5 +4,7 @@
   "risk": "3",
   "title": " Queued transactions after a migrate will get stuck forever!",
   "issueId": 115,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/115"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/115",
+  "validatedIssueId": 65,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/65"
 }
