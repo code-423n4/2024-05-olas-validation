@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Malicious StakingToken instance can DoS deposits and control min deposit amount",
   "issueId": 251,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/251"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/251",
+  "validatedIssueId": 44,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/44"
 }
