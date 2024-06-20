@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Removing last nominee in setNominees makes mapNomineeIds persist causing getter functions to err",
   "issueId": 175,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/175"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/175",
+  "validatedIssueId": 95,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/95"
 }
