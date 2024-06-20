@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Forcing the protocol to distribute staking incentives to staking instances two times",
   "issueId": 91,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/91"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/91",
+  "validatedIssueId": 66,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/66"
 }
