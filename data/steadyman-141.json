@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The attacker can get more rewards by redistributing the weights",
   "issueId": 141,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/141"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/141",
+  "validatedIssueId": 96,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/96"
 }
