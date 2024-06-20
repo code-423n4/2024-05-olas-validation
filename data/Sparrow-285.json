@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Incorrect Mapping Update During Nominee Removal Leads to Inconsistent State",
   "issueId": 285,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/285"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/285",
+  "validatedIssueId": 74,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/74"
 }
