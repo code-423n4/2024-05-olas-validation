@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "When revoking user voting power, the update of changesSum is not synchronized with pointsSum.",
   "issueId": 187,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/187"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/187",
+  "validatedIssueId": 92,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/92"
 }
