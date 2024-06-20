@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Wormhole uses Dispenser contract address as a refund address on l2 chain, resulting in a loss of funds",
   "issueId": 208,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/208"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/208",
+  "validatedIssueId": 91,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/91"
 }
