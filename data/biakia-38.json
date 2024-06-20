@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The `_processData` function does not check for duplicate target",
   "issueId": 38,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/38"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/38",
+  "validatedIssueId": 73,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/73"
 }
