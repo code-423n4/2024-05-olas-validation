@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "`timeSum` update make it impossible to update `getSum()` in the next week",
   "issueId": 163,
-  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/163"
+  "issueUrl": "https://github.com/code-423n4/2024-05-olas-validation/issues/163",
+  "validatedIssueId": 103,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-olas-findings/issues/103"
 }
