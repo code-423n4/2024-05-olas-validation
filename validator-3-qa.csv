@@ -1,0 +1,40 @@
+issue,title,validator comment,grade,size,Best
+validation-273,QA Report,,Satisfactory,1,✰✰✰
+validation-233,QA Report,multiple low QA suggestions,Satisfactory,1,★★✰
+validation-225,QA Report,"many info level entry, but also contain some file specifc suggestions",Satisfactory,1,✰✰✰
+validation-215,QA Report,,Unsatisfactory,1,✰✰✰
+validation-180,QA Report,,Unsatisfactory,1,✰✰✰
+validation-176,QA Report,,Unsatisfactory,1,✰✰✰
+validation-161,QA Report,,Unsatisfactory,1,✰✰✰
+validation-158,QA Report,,Satisfactory,1,✰✰✰
+validation-154,QA Report,,Unsatisfactory,1,✰✰✰
+validation-153,QA Report,,Unsatisfactory,1,✰✰✰
+validation-146,QA Report,,Unsatisfactory,1,✰✰✰
+validation-140,Gas Optimizations,,Unsatisfactory,1,✰✰✰
+validation-139,QA Report,,Satisfactory,1,✰✰✰
+validation-127,QA Report,,Satisfactory,1,✰✰✰
+validation-119,QA Report,,Unsatisfactory,1,✰✰✰
+validation-87,QA Report,,Unsatisfactory,1,✰✰✰
+validation-70,QA Report,,Unsatisfactory,1,✰✰✰
+validation-44,QA Report,,Unsatisfactory,1,✰✰✰
+validation-39,QA Report,,Unsatisfactory,1,✰✰✰
+validation-37,QA Report,,Unsatisfactory,1,✰✰✰
+validation-36,QA Report,,Unsatisfactory,1,✰✰✰
+validation-35,Gas Optimizations,,Unsatisfactory,1,✰✰✰
+validation-25,Gas Optimizations,,Unsatisfactory,1,✰✰✰
+validation-23,Gas Optimizations,,Unsatisfactory,1,✰✰✰
+validation-7,QA Report,L-3 is dup of findings#26,Satisfactory,1,✰✰✰
+validation-6,QA Report,,Unsatisfactory,1,✰✰✰
+validation-5,QA Report,,Unsatisfactory,1,✰✰✰
+validation-3,QA Report,,Unsatisfactory,1,✰✰✰
+validation-2,Gas Optimizations,,Unsatisfactory,1,✰✰✰
+findings-34,QA Report,multiple low QA suggestions,Satisfactory,1,★★✰
+findings-19,QA Report,,Satisfactory,1,✰✰✰
+findings-7,QA Report,,Unsatisfactory,1,✰✰✰
+validation-279,QA Report,,Satisfactory,1,✰✰✰
+validation-271,QA Report,,Unsatisfactory,1,✰✰✰
+validation-174,QA Report,,Unsatisfactory,1,✰✰✰
+validation-124,Gas Optimizations,,Unsatisfactory,1,✰✰✰
+validation-99,QA Report,,Unsatisfactory,1,✰✰✰
+validation-19,QA Report,multiple low QA suggestions,Satisfactory,1,★✰✰
+validation-17,QA Report,,Unsatisfactory,1,✰✰✰
